@@ -25,3 +25,8 @@ html,body {
 .list li {
   padding: 10px 0;
 }
+
+.clickable:hover {
+  cursor: pointer;
+  display: inline-block;
+}
