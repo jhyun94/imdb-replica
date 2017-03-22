@@ -31,7 +31,9 @@ html,body {
   cursor: pointer;
   display: inline-block;
 }
-
+.movie {
+  display: none;
+}
 .movie-poster {
   float: right;
   height: 200px;

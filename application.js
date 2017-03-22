@@ -9,6 +9,8 @@ $( document ).ready(function() {
           url: "http://www.omdbapi.com/?s=" + data,
         }).done(function(response){
           $(".list").empty();
+          $(".detail").empty();
+          $("movie").hide();
           displayResult(response);
         })
       }
@@ -20,7 +22,10 @@ $( document ).ready(function() {
         method: "GET",
         url: "http://www.omdbapi.com/?i=" + id
       }).done(function(response){
-        console.log(response);
+        $(".list").empty();
+        $(".detail").empty();
+        displayMovieDetail(response);
+        $(".movie").show();
       })
     })
 
@@ -34,6 +39,18 @@ $( document ).ready(function() {
         + '<input type="hidden" class="imdbID" value=' + response["Search"][i]["imdbID"] 
         + '></li>');
     }
+  }
+
+  function displayMovieDetail(response){
+    console.log(response["Poster"]);
+    $(".movie-poster").attr("src", response["Poster"]);
+    $(".title").text(response["Title"]);
+    $(".year").text(response["Year"]);
+    $(".rated").text(response["Rated"]);
+    $(".released").text(response["Released"]);
+    $(".runtime").text(response["Runtime"]);
+    $(".plot").text("Plot");
+    $(".plot-description").text(response["Plot"]);
   }
 });
 
