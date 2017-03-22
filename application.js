@@ -10,6 +10,14 @@ $( document ).ready(function() {
         displayResult(response);
       })
     })
-    test();
+
+
+
+
+  function displayResult(response) {
+    for(var i = 0; i <10; i++){
+      $(".list").append('<li>' + response["Search"][i]["Title"]);
+    }
+  }
 });
 

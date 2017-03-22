@@ -19,4 +19,9 @@ html,body {
 
 .list {
   margin-top: 0;
+  list-style-type: none;
+}
+
+.list li {
+  padding: 10px 0;
 }
