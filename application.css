@@ -24,6 +24,7 @@ html,body {
 
 .list li {
   padding: 10px 0;
+  text-decoration: underline;
 }
 
 .clickable:hover {

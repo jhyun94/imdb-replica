@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+
     $("form").on("submit", function(){
       event.preventDefault();
       var data = $("#search").val();
@@ -7,9 +8,14 @@ $( document ).ready(function() {
           method: "GET",
           url: "http://www.omdbapi.com/?s=" + data,
         }).done(function(response){
+          $(".list").empty();
           displayResult(response);
         })
       }
+    })
+
+    $(document).on("click", ".clickable",  function(){
+      $(this).next().val();
     })
 
 
