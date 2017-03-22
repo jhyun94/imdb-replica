@@ -1,0 +1,22 @@
+html,body {
+  margin: 0;
+  padding: 0;
+  background-color: #C8B90D;
+}
+
+.header {
+  padding: 40px 0;
+  text-align:center;
+  background-color: #201C8C;
+}
+
+.container {
+  padding: 0 auto;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: #fff;
+}
+
+.list {
+  margin-top: 0;
+}
