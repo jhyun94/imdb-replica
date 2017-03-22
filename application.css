@@ -31,3 +31,12 @@ html,body {
   cursor: pointer;
   display: inline-block;
 }
+
+.movie-poster {
+  float: right;
+  height: 200px;
+}
+
+.clearfix {
+  clear: both;
+}

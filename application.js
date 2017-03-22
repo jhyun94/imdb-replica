@@ -15,7 +15,13 @@ $( document ).ready(function() {
     })
 
     $(document).on("click", ".clickable",  function(){
-      $(this).next().val();
+      var id = $(this).next().val();
+      $.ajax({
+        method: "GET",
+        url: "http://www.omdbapi.com/?i=" + id
+      }).done(function(response){
+        console.log(response);
+      })
     })
 
 
