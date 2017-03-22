@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-    $("form").on("submit", function(){
+    $(document).on("submit", "form",  function(){
       event.preventDefault();
       var data = $("#search").val();
       if (data != 0){
@@ -10,7 +10,8 @@ $( document ).ready(function() {
         }).done(function(response){
           $(".list").empty();
           $(".detail").empty();
-          $("movie").hide();
+          $(".movie").hide();
+          $(".movie-poster").remove();
           displayResult(response);
         })
       }
@@ -42,8 +43,8 @@ $( document ).ready(function() {
   }
 
   function displayMovieDetail(response){
-    console.log(response["Poster"]);
-    $(".movie-poster").attr("src", response["Poster"]);
+    addImage(response);
+    // $(".movie-poster").attr("src", response["Poster"]);
     $(".title").text(response["Title"]);
     $(".year").text(response["Year"]);
     $(".rated").text(response["Rated"]);
@@ -51,6 +52,10 @@ $( document ).ready(function() {
     $(".runtime").text(response["Runtime"]);
     $(".plot").text("Plot");
     $(".plot-description").text(response["Plot"]);
+  }
+
+  function addImage(response){
+    $(".movie .container").prepend('<img class="movie-poster" src="'+response["Poster"]+'"  />' )
   }
 });
 
