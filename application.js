@@ -6,7 +6,7 @@ $( document ).ready(function() {
       if (data != 0){
         $.ajax({
           method: "GET",
-          url: "http://www.omdbapi.com/?s=" + data,
+          url: "https://www.omdbapi.com/?s=" + data,
         }).done(function(response){
           emptyDisplay();
           $(".movie").hide();
@@ -20,7 +20,7 @@ $( document ).ready(function() {
       var id = $(this).next().val();
       $.ajax({
         method: "GET",
-        url: "http://www.omdbapi.com/?i=" + id
+        url: "https://www.omdbapi.com/?i=" + id
       }).done(function(response){
         emptyDisplay();
         displayMovieDetail(response);
