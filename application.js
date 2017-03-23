@@ -9,7 +9,6 @@ $( document ).ready(function() {
       if (data.charAt(data.length-1) == "+"){
         data = data.substring(0, data.length-1);
       }
-      console.log(data);
       if (data != 0){
         $.ajax({
           method: "GET",
@@ -35,12 +34,7 @@ $( document ).ready(function() {
       })
     })
 
-
-
-
-
   function displayResult(response) {
-    console.log(response);
     var length = 10;
     if (response.length < 10 ){
       length = response.length;
