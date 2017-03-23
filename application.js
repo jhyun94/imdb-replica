@@ -56,11 +56,11 @@ $( document ).ready(function() {
 
   function displayMovieDetail(response){
     addImage(response);
-    $(".title").text(response["Title"]);
-    $(".year").text(response["Year"]);
-    $(".rated").text(response["Rated"]);
-    $(".released").text(response["Released"]);
-    $(".runtime").text(response["Runtime"]);
+    $(".title").text("Title: " + response["Title"]);
+    $(".year").text("Year: " + response["Year"]);
+    $(".rated").text("Rated: " + response["Rated"]);
+    $(".released").text("Released" + response["Released"]);
+    $(".runtime").text("Runetime: " + response["Runtime"]);
     $(".plot").text("Plot");
     $(".plot-description").text(response["Plot"]);
   }

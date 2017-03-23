@@ -31,14 +31,25 @@ html,body {
   cursor: pointer;
   display: inline-block;
 }
+.card {
+  padding: 20px;
+}
 .movie {
   display: none;
 }
 .movie-poster {
   float: right;
-  height: 200px;
+  height: 260px;
+  padding-left: 20px;
 }
 
 .clearfix {
   clear: both;
+}
+
+
+#search {
+  height: 30px;
+  width: 300px;
+  font-size: 20px;
 }
