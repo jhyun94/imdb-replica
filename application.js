@@ -3,13 +3,13 @@ $( document ).ready(function() {
     $(document).on("submit", "form",  function(){
       event.preventDefault();
       var data = $("#search").val();
+      data = data.replace(/\s+/g, '+');
       if (data != 0){
         $.ajax({
           method: "GET",
           url: "http://www.omdbapi.com/?s=" + data,
         }).done(function(response){
-          $(".list").empty();
-          $(".detail").empty();
+          emptyDisplay();
           $(".movie").hide();
           $(".movie-poster").remove();
           displayResult(response);
@@ -23,8 +23,7 @@ $( document ).ready(function() {
         method: "GET",
         url: "http://www.omdbapi.com/?i=" + id
       }).done(function(response){
-        $(".list").empty();
-        $(".detail").empty();
+        emptyDisplay();
         displayMovieDetail(response);
         $(".movie").show();
       })
@@ -44,7 +43,6 @@ $( document ).ready(function() {
 
   function displayMovieDetail(response){
     addImage(response);
-    // $(".movie-poster").attr("src", response["Poster"]);
     $(".title").text(response["Title"]);
     $(".year").text(response["Year"]);
     $(".rated").text(response["Rated"]);
@@ -56,6 +54,10 @@ $( document ).ready(function() {
 
   function addImage(response){
     $(".movie .container").prepend('<img class="movie-poster" src="'+response["Poster"]+'"  />' )
+  }
+  function emptyDisplay(){
+    $(".list").empty();
+    $(".detail").empty();
   }
 });
 
