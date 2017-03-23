@@ -1,0 +1,55 @@
+html,body {
+  margin: 0;
+  padding: 0;
+  background-color: #C8B90D;
+}
+
+.header {
+  padding: 40px 0;
+  text-align:center;
+  background-color: #201C8C;
+}
+
+.container {
+  padding: 0 auto;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: #fff;
+}
+
+.list {
+  margin-top: 0;
+  list-style-type: none;
+}
+
+.list li {
+  padding: 5px 0;
+  text-decoration: underline;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  display: inline-block;
+}
+.card {
+  padding: 20px;
+}
+.movie {
+  display: none;
+}
+.movie-poster {
+  float: right;
+  height: 260px;
+  padding-left: 20px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+
+#search {
+  height: 30px;
+  width: 300px;
+  font-size: 20px;
+}
