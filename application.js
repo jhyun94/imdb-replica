@@ -1,9 +1,15 @@
 $( document ).ready(function() {
 
-    $(document).on("submit", "form",  function(){
-      event.preventDefault();
+    $(document).on("keyup", "#search",  function(){
       var data = $("#search").val();
+      if (data.length == 0){
+        $(".list").empty();
+      }
       data = data.replace(/\s+/g, '+');
+      if (data.charAt(data.length-1) == "+"){
+        data = data.substring(0, data.length-1);
+      }
+      console.log(data);
       if (data != 0){
         $.ajax({
           method: "GET",
@@ -34,10 +40,17 @@ $( document ).ready(function() {
 
 
   function displayResult(response) {
-    for(var i = 0; i <10; i++){
-      $(".list").append('<li><p class="clickable">' + response["Search"][i]["Title"] + '</p>'
-        + '<input type="hidden" class="imdbID" value=' + response["Search"][i]["imdbID"] 
-        + '></li>');
+    console.log(response);
+    var length = 10;
+    if (response.length < 10 ){
+      length = response.length;
+    }
+    if (response["Response"] == "True"){
+      for(var i = 0; i <length; i++){
+        $(".list").append('<li><p class="clickable">' + response["Search"][i]["Title"] + '</p>'
+          + '<input type="hidden" class="imdbID" value=' + response["Search"][i]["imdbID"] 
+          + '></li>');
+      }
     }
   }
 
